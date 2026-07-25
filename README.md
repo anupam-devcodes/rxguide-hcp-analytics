@@ -1,110 +1,114 @@
-RxGuide AI
+<div align="center">
 
-HCP Targeting and Pharmaceutical Sales-Force Analytics
+💊 RxGuide AI
 
-RxGuide AI is an end-to-end pharmaceutical commercial analytics project built with Python, SQL, machine learning, and Power BI.
+Intelligent HCP Targeting & Pharmaceutical Sales-Force Analytics
 
-It analyzes healthcare-professional engagement, prescription behavior, representative performance, and territory efficiency to answer one practical question:
+Python • MySQL • Machine Learning • Power BI
 
-Which HCPs should the sales team prioritize, and what action should they take next?
+<br>
 
-Business Problem
+Turning field-call and prescription data into one clear decision:Which HCP should the sales team prioritize next—and why?
 
-Pharmaceutical sales teams interact with many HCPs, but every interaction does not create the same value.
+<br>
 
-Some HCPs:
 
-Prescribe heavily but receive limited engagement
 
-Receive frequent calls but show weak prescription response
+</div>
 
-Show strong recent growth
+🚀 What is RxGuide AI?
 
-Were previously valuable but are now declining
+Pharmaceutical sales teams regularly visit healthcare professionals, but every HCP does not offer the same opportunity.
 
-The goal is to help the commercial team identify these patterns and use field resources more effectively.
+A doctor may:
 
-What This Project Does
+prescribe strongly despite receiving very few visits,
 
-Cleans and validates multi-table pharmaceutical data using Python
+receive frequent calls but generate little prescription growth,
 
-Performs business analysis using SQL, CTEs, joins, and window functions
+show promising recent momentum,
 
-Segments HCPs using K-Means clustering
+or be a previously valuable HCP whose activity is now declining.
 
-Predicts next-month prescription growth using classification models
+RxGuide AI identifies these patterns and converts them into practical engagement recommendations.
 
-Generates an HCP Opportunity Score
+Instead of stopping at charts, the project produces a prioritized HCP action list for the commercial team.
 
-Recommends actions such as increasing visits, maintaining engagement, or reducing low-value calls
+🎯 The Business Decision
 
-Presents the final insights through an interactive Power BI dashboard
+Situation
 
-Project Workflow
+Recommended action
 
-Raw CSV Data
-      ↓
-Python Cleaning and EDA
-      ↓
-MySQL Database
-      ↓
-SQL Business Analysis
-      ↓
-Machine Learning
-      ↓
+High prescription value, low field coverage
+
+Increase visit frequency
+
+Strong value, adequate coverage
+
+Maintain engagement
+
+High call activity, weak response
+
+Review call quality or reduce coverage
+
+Valuable HCP with declining prescriptions
+
+Start retention intervention
+
+Strong digital response
+
+Prioritize virtual or hybrid engagement
+
+Low value and low growth potential
+
+Monitor at low priority
+
+✨ What Makes This Project Different?
+
+Most portfolio projects stop here:
+
+Data → Charts → Dashboard
+
+RxGuide AI goes further:
+
+Data
+  ↓
+Business Analysis
+  ↓
+HCP Segmentation
+  ↓
+Prescription-Growth Prediction
+  ↓
 Opportunity Scoring
-      ↓
-Power BI Dashboard
+  ↓
+Recommended Action
+  ↓
+Power BI Decision Dashboard
 
-Dataset
+The final output is not just what happened.
 
-The project uses a synthetic pharmaceutical commercial dataset containing:
+It also explains:
 
-File
+Which HCP matters
 
-Description
+Why the HCP matters
 
-hcps.csv
+How likely prescription growth is
 
-HCP profiles, specialties, segments, and locations
+What the field team should do next
 
-sales_reps.csv
+🧠 Intelligence Layer
 
-Representative, territory, region, and manager details
+1. Behaviour-Based HCP Segmentation
 
-products.csv
-
-Pharmaceutical products and therapy areas
-
-call_activity.csv
-
-Rep-HCP calls, channel, duration, and samples
-
-prescriptions.csv
-
-Monthly HCP-product prescription activity
-
-ic_quotas.csv
-
-Quarterly targets, attainment, and incentive outcomes
-
-The dataset contains approximately 31,000 transactional records across calls and prescriptions.
-
-Source: rnigam-health/healthcare-analytics
-
-The data is synthetic and contains no real patient or confidential pharmaceutical-company information.
-
-Machine Learning
-
-1. HCP Segmentation
-
-K-Means clustering groups HCPs using features such as:
+K-Means clustering groups HCPs using:
 
 Prescription volume
 
 Recent prescription growth
 
-Number of field calls
+Field-call frequency
 
 Prescriptions per call
 
@@ -114,78 +118,155 @@ Product breadth
 
 Days since last interaction
 
-The clusters are converted into business-friendly segments such as:
+The resulting clusters are translated into clear business segments:
 
-Strategic HCPs
+Segment
 
-High-Potential Under-Covered HCPs
+Meaning
 
-Growth HCPs
+🟢 Strategic HCPs
 
-Low-Conversion HCPs
+High-value and strongly engaged
 
-At-Risk HCPs
+🔵 High-Potential Under-Covered
 
-2. Prescription-Growth Prediction
+Valuable HCPs receiving insufficient attention
+
+🟡 Growth HCPs
+
+Moderate value with improving prescription momentum
+
+🟠 Low-Conversion HCPs
+
+High engagement but weak prescription response
+
+🔴 At-Risk HCPs
+
+Previously valuable HCPs showing decline
+
+2. Prescription-Growth Propensity
 
 Two classification models are compared:
 
-Logistic Regression
+Logistic Regression — interpretable baseline
 
-Random Forest
+Random Forest — captures non-linear behaviour
 
-The model estimates the probability that an HCP-product combination will show prescription growth in the next month.
+The model estimates the probability that an HCP-product combination will grow in the next month.
 
-A time-based train-test split is used to avoid data leakage.
+A chronological train-test split is used to reduce data leakage.
 
-HCP Opportunity Score
+📊 HCP Opportunity Score
 
-The project combines ML predictions and business metrics into an explainable priority score:
+Each HCP receives an explainable priority score:
 
-40% Growth Probability
-25% Under-Coverage Score
-20% Prescription Potential
-15% Prescriptions-per-Call Efficiency
+40%  Predicted Growth Probability
+25%  Under-Coverage Score
+20%  Current Prescription Potential
+15%  Prescriptions-per-Call Efficiency
 
-The score is used to recommend actions such as:
+This score combines machine learning with transparent business logic, making the recommendation easy to explain to both technical and non-technical stakeholders.
 
-Increase visit frequency
+🗃️ Dataset at a Glance
 
-Maintain engagement
+<div align="center">
 
-Retention intervention
+500
 
-Change engagement channel
+50
 
-Reduce low-value calls
+13.7K+
 
-Monitor
+17.3K+
 
-SQL Analysis
+5
 
-The SQL layer focuses on high-value business questions:
+HCPs
 
-Top HCPs by prescription volume
+Sales Reps
 
-High-value but under-covered HCPs
+Field Calls
 
-Representative efficiency
+Prescription Records
 
-Product month-over-month growth
+Products
 
-Rep ranking within territories
+</div>
 
-High-call but low-output territories
+The project uses six connected datasets:
 
-Quarterly quota attainment
+Dataset
 
-Techniques used:
+Purpose
 
-JOINs • CTEs • CASE WHEN • LAG • RANK • DENSE_RANK • Window Functions
+hcps.csv
 
-Power BI Dashboard
+HCP specialty, segment, territory, and location
 
-Commercial Performance
+sales_reps.csv
+
+Representative, manager, region, and territory
+
+products.csv
+
+Product and therapy-area information
+
+call_activity.csv
+
+HCP calls, channel, duration, and samples
+
+prescriptions.csv
+
+Monthly HCP-product prescription activity
+
+ic_quotas.csv
+
+Quotas, actual performance, attainment, and incentives
+
+Dataset source: rnigam-health/healthcare-analytics
+
+The dataset is synthetic and contains no real patient, physician, or confidential pharmaceutical-company data.
+
+⚙️ End-to-End Architecture
+
+flowchart LR
+    A[Raw CSV Files] --> B[Python Cleaning & EDA]
+    B --> C[(MySQL Database)]
+    C --> D[SQL Business Analysis]
+    D --> E[ML Feature Table]
+    E --> F[K-Means Segmentation]
+    E --> G[Growth Prediction]
+    F --> H[Opportunity Score]
+    G --> H
+    H --> I[Recommended Actions]
+    I --> J[Power BI Dashboard]
+
+🔍 SQL Analysis
+
+The SQL layer answers focused commercial questions such as:
+
+Which HCPs generate the highest prescriptions?
+
+Which high-value HCPs are under-covered?
+
+Which representatives produce the best prescriptions-per-call ratio?
+
+Which products are growing month over month?
+
+Which territories show high activity but low output?
+
+Which representatives consistently achieve quota?
+
+How do representatives rank within their territories?
+
+SQL concepts used
+
+JOINs • CTEs • CASE WHEN • LAG • RANK
+DENSE_RANK • Conditional Aggregation • Window Functions
+
+📈 Power BI Dashboard
+
+Executive Performance
 
 Total prescriptions
 
@@ -193,17 +274,17 @@ Total field calls
 
 Quota attainment
 
-Product performance
+Product growth
 
 Territory performance
 
-Representative ranking
+Representative rankings
 
 Prescriptions per call
 
 HCP Intelligence
 
-HCP segment distribution
+Behavioural segment distribution
 
 High-potential under-covered HCPs
 
@@ -215,55 +296,82 @@ Recommended action
 
 HCP-level priority table
 
-Tech Stack
+Product, specialty, territory, and representative filters
 
-Python: pandas, NumPy, Matplotlib, scikit-learn
+🛠️ Tech Stack
 
-Database: MySQL
+Area
 
-SQL: CTEs, joins, aggregations, window functions
+Tools
 
-Machine Learning: K-Means, Logistic Regression, Random Forest
+Data Cleaning & EDA
 
-Visualization: Power BI
+Python, pandas, NumPy, Matplotlib
 
-Tools: Jupyter Notebook, VS Code, Git, GitHub
+Database
 
-Repository Structure
+MySQL
+
+Business Analysis
+
+SQL, CTEs, joins, window functions
+
+Machine Learning
+
+scikit-learn, K-Means, Logistic Regression, Random Forest
+
+Dashboard
+
+Power BI
+
+Development
+
+Jupyter Notebook, VS Code, Git, GitHub
+
+📁 Repository Structure
 
 rxguide-hcp-analytics/
 │
 ├── data/
 │   ├── raw/
 │   └── processed/
+│
 ├── notebooks/
 │   ├── 01_data_cleaning_and_eda.ipynb
 │   ├── 02_hcp_segmentation.ipynb
 │   └── 03_growth_prediction_and_scoring.ipynb
+│
 ├── sql/
 │   ├── 01_schema_and_import.sql
 │   ├── 02_business_analysis.sql
 │   └── 03_analytical_views.sql
+│
 ├── outputs/
 ├── powerbi/
 │   └── RxGuide_AI_Dashboard.pbix
+│
+├── requirements.txt
 ├── README.md
-└── requirements.txt
+└── LICENSE
 
-Key Project Value
+💡 Project Value
 
-This project goes beyond a standard dashboard by combining:
+RxGuide AI demonstrates how to connect:
 
-Business SQL + behavioural segmentation + predictive modelling + actionable recommendations + Power BI
+Business SQL + Machine Learning + Decision Logic + Power BI
 
-The final output is not only a set of charts. It is a prioritized HCP action list that helps a pharmaceutical sales team decide where to focus its effort.
+The project is designed to move beyond ordinary descriptive analytics and deliver a clear, explainable, HCP-level commercial recommendation.
 
-Author
+👤 Author
 
 Anupam Choubey
 
-GitHub · Project Repository
 
-License
 
-This project is available under the MIT License.
+<div align="center">
+
+Built to turn pharmaceutical data into better field-force decisions.
+
+⭐ Star the repository if you find the project useful.
+
+</div>
