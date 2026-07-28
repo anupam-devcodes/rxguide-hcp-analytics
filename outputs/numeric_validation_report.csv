@@ -1,0 +1,9 @@
+check,invalid_rows
+Negative call duration,0
+Negative samples given,0
+Non-positive prescription count,0
+Non-positive units dispensed,0
+Non-positive product price,0
+Non-positive quota units,0
+Negative actual units,0
+Negative incentive payout,0

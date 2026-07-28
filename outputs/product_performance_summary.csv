@@ -1,0 +1,6 @@
+product_id,total_prescriptions,total_units_dispensed,prescribing_hcps,product_name,therapy_area,unit_price,estimated_gross_value
+P002,8876,356130,431,Diabolite,Diabetes,380,135329400
+P001,8606,346645,440,Cardiozen,Cardiology,450,155990250
+P004,8799,346550,444,Oncoshield,Oncology,2800,970340000
+P005,8519,342384,437,Neurofine,Neurology,620,212278080
+P003,8293,333128,439,Respira-X,Respiratory,520,173226560

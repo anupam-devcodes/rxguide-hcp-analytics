@@ -1,0 +1,11 @@
+territory,region,total_calls,covered_hcps,total_samples,total_prescriptions,total_units_dispensed,prescribing_hcps,units_per_call
+Central-2,Central,660.0,49.0,2652.0,2245,91941,49,139.3
+North-2,North,2583.0,57.0,10315.0,8642,348582,57,134.95
+South-2,South,2840.0,48.0,11278.0,9627,381432,48,134.31
+West-2,West,947.0,59.0,3650.0,3115,123939,59,130.88
+North-1,North,1459.0,34.0,5824.0,4522,183480,34,125.76
+East-2,East,785.0,53.0,3137.0,2433,98312,53,125.24
+West-1,West,986.0,54.0,3949.0,2813,113251,54,114.86
+South-1,South,1479.0,44.0,5889.0,4300,169846,44,114.84
+Central-1,Central,1966.0,46.0,7863.0,5157,204518,46,104.03
+East-1,East,0.0,0.0,0.0,239,9536,41,
