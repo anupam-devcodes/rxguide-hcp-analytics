@@ -1,0 +1,11 @@
+territory,region,total_hcps,assigned_reps,total_calls,covered_hcps,total_samples,total_prescriptions,total_units_dispensed,prescribing_hcps,hcp_coverage_pct,units_per_call,prescriptions_per_call,units_per_prescribing_hcp,territory_status
+South-2,South,48,10,2363,48,9418,8037,320419,48,100.0,135.6,3.4,6675.4,Active Coverage
+North-2,North,57,10,2141,57,8603,7197,290466,57,100.0,135.67,3.36,5095.89,Active Coverage
+Central-1,Central,46,7,1631,46,6491,4335,171254,46,100.0,105.0,2.66,3722.91,Active Coverage
+North-1,North,34,5,1203,34,4772,3745,151775,34,100.0,126.16,3.11,4463.97,Active Coverage
+South-1,South,44,5,1256,44,4994,3606,142449,44,100.0,113.41,2.87,3237.48,Active Coverage
+West-2,West,59,4,780,59,2996,2557,101922,59,100.0,130.67,3.28,1727.49,Active Coverage
+West-1,West,54,3,803,54,3176,2381,96364,54,100.0,120.0,2.97,1784.52,Active Coverage
+East-2,East,53,3,652,53,2611,2029,82445,53,100.0,126.45,3.11,1555.57,Active Coverage
+Central-2,Central,49,3,556,49,2241,1841,75125,49,100.0,135.12,3.31,1533.16,Active Coverage
+East-1,East,56,0,0,0,0,206,8294,40,0.0,,,207.35,Uncovered Opportunity

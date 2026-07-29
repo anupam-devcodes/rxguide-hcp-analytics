@@ -1,0 +1,21 @@
+hcp_id,hcp_name,specialty,segment,territory,region,total_calls,total_prescriptions,total_units_dispensed,product_breadth,last_call_date,prescriptions_per_call,value_percentile,undercoverage_percentile,opportunity_score,coverage_status
+H0459,Dr. HCP_0459,Pulmonologist,A,North-1,North,17,184,7937,5,2026-03-27,10.82,96.07,57.35,82.52,Regular Coverage
+H0038,Dr. HCP_0038,Neurologist,A,North-2,North,15,143,5904,5,2026-03-24,9.53,89.23,63.56,80.25,Regular Coverage
+H0016,Dr. HCP_0016,General Physician,A,North-1,North,11,119,5083,5,2026-03-19,10.82,82.19,75.16,79.73,Low Coverage
+H0291,Dr. HCP_0291,Oncologist,A,South-2,South,22,200,8556,5,2026-03-20,9.09,97.72,45.34,79.39,Regular Coverage
+H0333,Dr. HCP_0333,Cardiologist,A,South-2,South,22,200,8321,5,2026-03-24,9.09,96.89,45.34,78.85,Regular Coverage
+H0300,Dr. HCP_0300,General Physician,A,North-2,North,19,169,6909,5,2026-03-26,8.89,92.96,51.97,78.61,Regular Coverage
+H0373,Dr. HCP_0373,Oncologist,A,North-2,North,24,191,8475,5,2026-03-27,7.96,97.31,42.24,78.03,Regular Coverage
+H0069,Dr. HCP_0069,Endocrinologist,A,South-2,South,26,224,9832,5,2026-03-31,8.62,99.17,38.72,78.01,Regular Coverage
+H0245,Dr. HCP_0245,Cardiologist,A,South-2,South,28,287,11848,5,2026-03-26,10.25,99.79,36.23,77.55,Regular Coverage
+H0099,Dr. HCP_0099,Endocrinologist,A,South-2,South,21,170,7095,5,2026-03-30,8.1,93.79,47.2,77.48,Regular Coverage
+H0027,Dr. HCP_0027,Neurologist,A,North-1,North,26,193,8831,5,2026-03-27,7.42,98.14,38.72,77.34,Regular Coverage
+H0133,Dr. HCP_0133,General Physician,A,North-2,North,28,251,9731,5,2026-03-24,8.96,98.76,36.23,76.87,Regular Coverage
+H0007,Dr. HCP_0007,Cardiologist,A,South-2,South,27,217,8517,5,2026-03-23,8.04,97.52,37.47,76.5,Regular Coverage
+H0369,Dr. HCP_0369,Cardiologist,A,North-2,North,16,130,5326,5,2026-03-12,8.13,85.3,59.83,76.39,Regular Coverage
+H0059,Dr. HCP_0059,Endocrinologist,A,West-1,West,14,128,5025,4,2026-02-02,9.14,81.57,66.05,76.14,Regular Coverage
+H0006,Dr. HCP_0006,Oncologist,A,South-2,South,26,206,7914,5,2026-03-30,7.92,95.86,38.72,75.86,Regular Coverage
+H0410,Dr. HCP_0410,Oncologist,A,North-2,North,23,157,6494,5,2026-03-30,6.83,92.13,43.48,75.1,Regular Coverage
+H0378,Dr. HCP_0378,Cardiologist,A,South-2,South,24,150,6232,5,2026-03-04,6.25,91.3,42.24,74.13,Regular Coverage
+H0057,Dr. HCP_0057,Cardiologist,A,Central-1,Central,15,107,4666,5,2026-03-27,7.13,78.26,63.56,73.12,Regular Coverage
+H0292,Dr. HCP_0292,Endocrinologist,A,North-2,North,23,146,5808,5,2026-03-29,6.35,88.61,43.48,72.82,Regular Coverage
