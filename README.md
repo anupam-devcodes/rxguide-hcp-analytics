@@ -1,200 +1,204 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:2563EB,100:06B6D4&height=220&section=header&text=RxGuide%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=35&desc=HCP%20Targeting%20%7C%20Growth%20Propensity%20%7C%20Sales-Force%20Intelligence&descSize=17&descAlignY=58" width="100%" alt="RxGuide AI banner">
+# RxGuide AI — HCP Analytics & Segmentation
 
-<p align="center">
-  <strong>Turning pharmaceutical commercial data into clear HCP engagement decisions</strong>
-</p>
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Scikit-learn](https://img.shields.io/badge/ML-Scikit--learn-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Power BI](https://img.shields.io/badge/BI-Power%20BI-F2C811?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Machine%20Learning-scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Machine Learning">
-  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI">
-</p>
+An end-to-end pharmaceutical commercial analytics project using **Python, SQL, K-Means clustering, opportunity scoring, and Power BI** to segment Healthcare Professionals (HCPs), identify field-coverage gaps, and recommend targeted engagement actions.
 
-<p align="center">
-  <a href="#-business-problem">Business Problem</a> •
-  <a href="#-solution">Solution</a> •
-  <a href="#-machine-learning">Machine Learning</a> •
-  <a href="#-dashboard">Dashboard</a> •
-  <a href="#-project-structure">Structure</a>
-</p>
+---
 
-## 🚀 Overview
+## Project Overview
 
-RxGuide AI is an end-to-end pharmaceutical commercial analytics project
-that combines **Python, MySQL, Machine Learning, and Power BI** to
-improve HCP targeting and sales-force effectiveness.
+Pharmaceutical sales teams work with HCPs who differ in prescription value, growth, product adoption, and field engagement.
 
-The platform transforms prescription activity, field-call data,
-representative performance, and territory metrics into actionable
-recommendations for commercial teams.
+RxGuide AI answers four key questions:
 
-## ✨ Key Highlights
+| Component | Business Question |
+|---|---|
+| Python & SQL | What is happening across prescriptions, products, territories, and field calls? |
+| K-Means | What type of HCP is this? |
+| Opportunity Score | Which HCPs should be prioritized? |
+| Power BI | What action should the commercial team take? |
 
--   End-to-end analytics pipeline
--   Python + SQL + Machine Learning + Power BI
--   Behaviour-based HCP segmentation
--   Prescription growth prediction
--   Opportunity scoring engine
--   Sales-force effectiveness analysis
--   Executive Power BI dashboard
+---
 
-## 🎯 Business Questions
+## Project Highlights
 
--   Which HCPs should sales representatives prioritize?
--   Which HCPs are under-covered?
--   Which territories underperform?
--   Which representatives are most effective?
--   Which HCPs show strong prescription growth potential?
+- Processed and validated **31K+ records** across **500 HCPs, 50 sales representatives, and 5 products**
+- Corrected **49 inconsistent tenure records**
+- Aggregated **1,093 repeated HCP-product-month combinations**
+- Created a reusable SQLite feature view with **one row per HCP**
+- Identified **56 HCPs with zero field-call coverage**
+- Detected an uncovered territory containing **40 active prescribers but no assigned representatives or calls**
+- Segmented all 500 HCPs into **four actionable behavioral groups**
+- Created an explainable opportunity score and segment-specific recommendations
+- Visualized clusters using PCA, capturing **68.36% of total feature variation**
 
-## 🏗️ Architecture
+---
 
-Raw Data → Python Cleaning & Validation → SQL Business Analysis →
-Feature Engineering → K-Means Segmentation → Growth Prediction →
-Opportunity Scoring → Power BI Dashboard
+## Workflow
 
-## 🧰 Technology Stack
+```mermaid
+flowchart LR
+    A[Raw CSV Data] --> B[Python Cleaning and EDA]
+    B --> C[SQLite Database]
+    C --> D[SQL Business Analysis]
+    D --> E[HCP Feature Engineering]
+    E --> F[K-Means Segmentation]
+    F --> G[Opportunity Scoring]
+    G --> H[Power BI Dashboard]
+```
 
-  Layer              Tools
-  ------------------ -----------------------
-  Data Processing    Python, Pandas, NumPy
-  Database           MySQL
-  Analytics          SQL
-  Machine Learning   Scikit-learn
-  Visualization      Power BI, Matplotlib
-  Development        Git, GitHub, VS Code
+---
 
-## 📊 Dataset
+## SQL Analysis
 
--   500 HCPs
--   50 Sales Representatives
--   17K+ Prescription Records
--   13K+ Field Calls
--   Product Catalogue
--   Territory & Quota Data
+The SQL layer uses **CTEs, joins, window functions, ranking, and `LAG`** to analyze:
 
-## 🐍 Python
+- HCP opportunity and undercoverage
+- Representative efficiency and quota attainment
+- Product month-over-month growth
+- Territory performance
+- Prescription and call engagement patterns
 
--   Data validation
--   Cleaning
--   EDA
--   Feature engineering
--   Outlier handling
--   Missing value analysis
+A reusable view named `vw_hcp_features` was created to generate model-ready HCP-level features.
 
-## 🗄️ SQL
+---
 
--   Multi-table joins
--   CTEs
--   Window functions
--   Ranking
--   Business views
--   Territory analysis
--   Representative analysis
+## HCP Segmentation
 
-## 🤖 Machine Learning
+K-Means was trained using six behavioral features:
 
-### Behaviour Segmentation
+| Feature | Meaning |
+|---|---|
+| `total_units_dispensed` | Current prescription value |
+| `prescription_momentum` | Recent growth or decline |
+| `total_calls` | Field engagement frequency |
+| `prescriptions_per_call` | Engagement efficiency |
+| `product_breadth` | Product adoption breadth |
+| `days_since_last_call` | Engagement recency |
 
--   K-Means clustering
+Models with two to six clusters were compared using silhouette score, inertia, cluster balance, and business interpretability.
 
-### Growth Prediction
+Although two clusters achieved the highest silhouette score, it grouped **440 different covered HCPs into one broad segment**. Four clusters were selected because they produced clearer and more actionable commercial profiles.
 
--   Logistic Regression
--   Random Forest
+---
 
-### Evaluation
+## Final Segments
 
--   Precision
--   Recall
--   F1-score
--   ROC-AUC
+| Segment | HCPs | Recommended Strategy |
+|---|---:|---|
+| Established High-Value | 163 | Maintain engagement and protect existing value |
+| Emerging Growth | 200 | Nurture growth through targeted follow-ups |
+| Efficient High-Value | 81 | Prioritize selective engagement and expansion |
+| Uncovered HCPs | 56 | Validate active prescribers before initiating outreach |
 
-## 🎯 Opportunity Score
+---
 
-Combines:
+## Opportunity Score
 
--   Growth Probability
--   Under-Coverage
--   Prescription Potential
--   Prescription Efficiency
+HCPs were ranked within their own segment using a transparent scoring formula:
 
-Produces:
+```text
+30% Prescription Value
+25% Undercoverage
+20% Prescription Momentum
+15% Engagement Efficiency
+10% Product Breadth
+```
 
--   Behaviour Segment
--   Growth Probability
--   Opportunity Score
--   Priority Tier
--   Recommended Action
+Priority tiers were then assigned:
 
-## 📈 Dashboard
+- **Top 20%:** High Priority
+- **Next 30%:** Medium Priority
+- **Bottom 50%:** Low Priority
 
-Executive dashboards include:
+The segment determines **how an HCP should be engaged**, while the score determines **who should be prioritized first**.
 
--   Sales Performance
--   Territory Performance
--   Product Performance
--   Representative Rankings
--   HCP Priorities
--   Opportunity Distribution
--   Recommended Actions
+---
 
-## 📁 Repository Structure
+## Dashboard Preview
 
-``` text
+### Commercial Performance Overview
+
+Tracks prescription trends, product performance, territory coverage, representative efficiency, call channels, and quota attainment.
+
+![Commercial Performance Overview](powerbi/Commercial_Perfomance.png)
+
+### HCP Segmentation & Prioritization
+
+Shows segment distribution, engagement patterns, opportunity scores, priority tiers, recommended HCP actions, and segment strategies.
+
+![HCP Segmentation Dashboard](powerbi/HCP_Segmentation.png)
+
+> The images currently represent the planned Power BI layout. The analytical values and model outputs are available in the `outputs` directory.
+
+---
+
+## Repository Structure
+
+```text
 rxguide-hcp-analytics/
 ├── data/
+│   ├── raw/
+│   └── processed/
 ├── notebooks/
-├── sql/
+│   ├── 01_data_cleaning_and_eda.ipynb
+│   ├── 02_sql_analysis.ipynb
+│   └── 03_hcp_segmentation.ipynb
 ├── outputs/
 ├── powerbi/
+├── scripts/
+├── sql/
 ├── requirements.txt
 └── README.md
 ```
 
-## ⚙️ Installation
+---
 
-``` bash
+## Technology Stack
+
+- **Data Analysis:** Python, Pandas, NumPy, Matplotlib
+- **Database:** SQLite, SQL
+- **Machine Learning:** Scikit-learn, K-Means, StandardScaler, PCA
+- **Business Intelligence:** Power BI
+
+---
+
+## Run Locally
+
+```bash
 git clone https://github.com/anupam-devcodes/rxguide-hcp-analytics.git
 cd rxguide-hcp-analytics
+
+python -m venv venv
+venv\Scripts\activate
+
 pip install -r requirements.txt
+python scripts/setup_sqlite_database.py
 ```
 
-Create the MySQL database, execute the SQL scripts, then run the
-notebooks in sequence before opening the Power BI dashboard.
+Run the notebooks in order:
 
-## 🛡️ Analytical Safeguards
+```text
+01_data_cleaning_and_eda.ipynb
+02_sql_analysis.ipynb
+03_hcp_segmentation.ipynb
+```
 
--   Time-based validation
--   No data leakage
--   Transparent scoring
--   Interpretable baseline model
--   No causal claims
+---
 
-## 🔮 Future Enhancements
+## Author
 
--   SHAP explanations
--   Probability calibration
--   Next-best-channel recommendation
--   Model monitoring
--   Capacity-aware territory planning
+**Anupam Choubey**
 
-👨‍💻 Author
+- GitHub: [anupam-devcodes](https://github.com/anupam-devcodes)
+- Repository: [rxguide-hcp-analytics](https://github.com/anupam-devcodes/rxguide-hcp-analytics)
 
-<p align="center">
-  <strong>Anupam Choubey</strong>
-</p>
+---
 
-<p align="center">
-  <a href="https://github.com/anupam-devcodes">
-    <img src="https://img.shields.io/badge/GitHub-anupam--devcodes-181717?style=for-the-badge&logo=github" alt="GitHub profile">
-  </a>
-  <a href="https://github.com/anupam-devcodes/rxguide-hcp-analytics">
-    <img src="https://img.shields.io/badge/Repository-RxGuide%20AI-2563EB?style=for-the-badge&logo=github" alt="Project repository">
-  </a>
-</p>
-📄 License
+## License
 
-This project is available under the MIT License.
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,55:2563EB,100:0F172A&height=110&section=footer" width="100%" alt="Footer">
+This project is licensed under the [MIT License](LICENSE).
