@@ -1,0 +1,5 @@
+cluster,hcp_segment,hcp_count,average_units,average_growth_pct,average_calls,average_prescriptions_per_call,average_product_breadth,average_days_since_last_call,no_call_hcps,no_call_pct,prescribing_hcps,segment_strategy
+0,Established High-Value,163,4738.55,10.29,44.39,2.92,5.0,6.61,0,0.0,163,Maintain engagement and protect existing value
+1,Emerging Growth,200,1680.48,16.88,15.86,2.94,4.68,18.91,0,0.0,200,Nurture growth through targeted follow-ups
+2,Efficient High-Value,81,3996.8,10.9,12.06,8.72,4.54,32.53,0,0.0,81,Prioritize selective engagement and expansion
+3,Uncovered HCPs,56,148.11,-9.55,0.0,,1.12,304.0,56,100.0,40,Evaluate active prescribers before initiating outreach

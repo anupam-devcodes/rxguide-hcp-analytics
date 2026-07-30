@@ -1,0 +1,6 @@
+number_of_clusters,inertia,silhouette_score,smallest_cluster_size,largest_cluster_size
+2,1909.71,0.544,60,440
+3,1439.74,0.315,57,251
+4,1117.653,0.341,56,200
+5,889.864,0.36,12,200
+6,746.308,0.37,12,206

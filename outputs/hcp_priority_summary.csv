@@ -1,0 +1,13 @@
+hcp_segment,priority_tier,hcp_count,average_opportunity_score,average_units
+Efficient High-Value,High Priority,17,72.91,4664.88
+Efficient High-Value,Medium Priority,24,67.17,4873.46
+Efficient High-Value,Low Priority,40,56.06,3186.88
+Emerging Growth,High Priority,41,60.84,2194.73
+Emerging Growth,Medium Priority,60,50.13,2021.47
+Emerging Growth,Low Priority,99,37.23,1260.84
+Established High-Value,High Priority,33,65.38,6768.42
+Established High-Value,Medium Priority,49,56.02,5477.31
+Established High-Value,Low Priority,81,43.64,3464.65
+Uncovered HCPs,High Priority,12,53.1,256.33
+Uncovered HCPs,Medium Priority,19,41.7,23.37
+Uncovered HCPs,Low Priority,25,35.56,190.96
